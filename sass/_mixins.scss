@@ -5,9 +5,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 69vw;
     z-index: 1;
     display: none;
+    
 }
 @mixin image-btn($top, $left, $showDesktop){
     background-color: v.$White;

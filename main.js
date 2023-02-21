@@ -86,6 +86,65 @@ previousGalleryBtn.addEventListener('click', ()=>{
     changeNextImage(imageContainer);
 });
 
+// mostrar modal gallery
+
+const imagesModal = document.querySelector('.modal-gallery__background');
+const closeModalBtn = document.querySelector('.modal-gallery__close');
+
+imageContainer.addEventListener('click',()=>{
+    imagesModal.style.display = 'grid';
+});
+
+closeModalBtn.addEventListener('click',()=>{
+    imagesModal.style.display = 'none';
+});
+
+// image changes  of the image thumnails
+
+let thumbnails = document.querySelectorAll('.gallery__thumnail');
+thumbnails = [...thumbnails]
+
+
+thumbnails.forEach(thumnail =>{
+    thumnail.addEventListener('click',event=>{
+        imageContainer.style.backgroundImage = `url('../images/image-product-${event.target.id}.jpg')`
+        
+    });
+});
+
+// image changes  of the image thumnails modal
+
+const modalImageContainer = document.querySelector('.modal-gallery__image-container');
+let thumbnailsModal = document.querySelectorAll('.modal-gallery__thumnail');
+thumbnailsModal = [...thumbnailsModal]
+
+
+thumbnailsModal.forEach(thumnailmodal => {
+    thumnailmodal.addEventListener('click', event=>{
+        modalImageContainer.style.backgroundImage = `url('../images/image-product-${event.target.id.slice(-1)}.jpg')`
+    });
+});
+// image changes of modal with buttons
+
+const previusModalBtn = document.querySelector('.modal-gallery__previous');
+const nextModalBtn = document.querySelector('.modal-gallery__next');
+
+
+
+nextModalBtn.addEventListener('click', ()=>{
+    changeNextImageModal(modalImageContainer);
+});
+
+
+previusModalBtn.addEventListener('click', ()=>{
+    changePreviousImageModal(modalImageContainer);
+});
+
+
+
+
+
+
 
 // functions
 
@@ -122,4 +181,25 @@ function changePreviousImage(imgContainer){
         imgIndex--;
     }
     imageContainer.style.backgroundImage = `url('../images/image-product-${imgIndex}.jpg')`
+}
+// Modal button fucntions
+
+
+function changeNextImageModal(modalImageContainer){
+    if(imgIndex == 4){
+        imgIndex = 1;
+    }else{
+        imgIndex++;
+
+    }
+    modalImageContainer.style.backgroundImage = `url('../images/image-product-${imgIndex}.jpg')`
+}
+function changePreviousImageModal(modalImageContainer){
+    if(imgIndex == 1){
+        imgIndex = 4;
+    }else{
+        imgIndex--;
+    }
+    modalImageContainer.style.backgroundImage = `url('../images/image-product-${imgIndex}.jpg')`
+
 }

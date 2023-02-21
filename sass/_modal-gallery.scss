@@ -6,7 +6,7 @@
     &__background{
         @include mixins.modal-background;
         display: none;
-        //display: grid;
+        
         place-content: center;
     }
     &__close-container{
@@ -22,7 +22,7 @@
         
     }
     &__image-container{
-        background-image: url(../images/image-product-1.jpg);
+        background-image: url('../images/image-product-1.jpg');
         height: 446px;
         background-size: cover;
         border-radius: 16px;
