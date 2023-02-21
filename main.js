@@ -140,6 +140,20 @@ previusModalBtn.addEventListener('click', ()=>{
     changePreviousImageModal(modalImageContainer);
 });
 
+// navbar modal 
+
+const menuBtn = document.querySelector('.header__menu');
+const modalNavbar = document.querySelector('.modal-navbar__background');
+const modalCloseNavbar = document.querySelector('.modal-navbar__close-icon')
+
+menuBtn.addEventListener('click',()=>{
+    modalNavbar.style.display = 'block';
+});
+
+modalCloseNavbar.addEventListener('click',()=>{
+    modalNavbar.style.display = 'none';
+});
+
 
 
 
