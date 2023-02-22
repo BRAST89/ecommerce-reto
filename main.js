@@ -107,7 +107,7 @@ thumbnails = [...thumbnails]
 
 thumbnails.forEach(thumnail =>{
     thumnail.addEventListener('click',event=>{
-        imageContainer.style.backgroundImage = `url('../images/image-product-${event.target.id}.jpg')`
+        imageContainer.style.backgroundImage = `url('./images/image-product-${event.target.id}.jpg')`
         
     });
 });
@@ -121,7 +121,7 @@ thumbnailsModal = [...thumbnailsModal]
 
 thumbnailsModal.forEach(thumnailmodal => {
     thumnailmodal.addEventListener('click', event=>{
-        modalImageContainer.style.backgroundImage = `url('../images/image-product-${event.target.id.slice(-1)}.jpg')`
+        modalImageContainer.style.backgroundImage = `url('./images/image-product-${event.target.id.slice(-1)}.jpg')`
     });
 });
 // image changes of modal with buttons
@@ -186,7 +186,7 @@ function changeNextImage(imgContainer){
         imgIndex++;
 
     }
-    imageContainer.style.backgroundImage = `url('../images/image-product-${imgIndex}.jpg')`
+    imageContainer.style.backgroundImage = `url('./images/image-product-${imgIndex}.jpg')`
 }
 function changePreviousImage(imgContainer){
     if(imgIndex == 1){
@@ -194,7 +194,7 @@ function changePreviousImage(imgContainer){
     }else{
         imgIndex--;
     }
-    imageContainer.style.backgroundImage = `url('../images/image-product-${imgIndex}.jpg')`
+    imageContainer.style.backgroundImage = `url('./images/image-product-${imgIndex}.jpg')`
 }
 // Modal button fucntions
 
@@ -206,7 +206,7 @@ function changeNextImageModal(modalImageContainer){
         imgIndex++;
 
     }
-    modalImageContainer.style.backgroundImage = `url('../images/image-product-${imgIndex}.jpg')`
+    modalImageContainer.style.backgroundImage = `url('./images/image-product-${imgIndex}.jpg')`
 }
 function changePreviousImageModal(modalImageContainer){
     if(imgIndex == 1){
@@ -214,6 +214,6 @@ function changePreviousImageModal(modalImageContainer){
     }else{
         imgIndex--;
     }
-    modalImageContainer.style.backgroundImage = `url('../images/image-product-${imgIndex}.jpg')`
+    modalImageContainer.style.backgroundImage = `url('./images/image-product-${imgIndex}.jpg')`
 
 }
